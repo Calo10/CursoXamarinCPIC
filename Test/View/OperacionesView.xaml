@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Test.View.OperacionesView">
+
+        <StackLayout Padding="10,50" 
+                 HorizontalOptions="FillAndExpand" 
+                 VerticalOptions="FillAndExpand">
+        <!-- Place new controls here -->
+        <Label 
+               Text="{Binding MiNombre}"
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"/>
+        
+        <!--VALOR 1-->
+        <StackLayout Orientation="Horizontal" 
+                      Margin="0,10"
+                     HorizontalOptions="LayoutOptions.FillAndExpand">
+            <Label Text="Primer Valor:"/>
+            <Entry  
+                   HorizontalOptions="LayoutOptions.FillAndExpand"
+                   Text="{Binding Valor1}"/>
+        </StackLayout>
+        
+        <!--VALOR 2-->
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand">
+            <Label Text="Segundo Valor:"/>
+            <Entry 
+                   HorizontalOptions="LayoutOptions.FillAndExpand"
+                   Text="{Binding Valor2}"/>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal"
+                     Margin="0,10"
+                     HorizontalOptions="FillAndExpand">
+            <Label Text="Resultado de la Suma"/>
+            <Label 
+                   Text="{Binding Resultado}"
+                   FontSize="Large"/>
+        </StackLayout>
+        
+        <Button
+                BackgroundColor="Silver"
+                Text="Sumar Valores"
+                TextColor="White"
+                Command="{Binding SumarCommand}"/>
+    </StackLayout>
+</ContentPage>
