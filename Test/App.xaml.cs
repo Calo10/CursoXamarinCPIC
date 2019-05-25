@@ -11,12 +11,13 @@ namespace Test
         {
             InitializeComponent();
 
-            NavigationPage navigation = new NavigationPage(new OperacionesView());
+            NavigationPage navigation = new NavigationPage(new PersonView());
 
-            MainPage = new MasterDetailPage {
+            MainPage = new MasterDetailPage
+            {
                 Master = new MenuView(),
                 Detail = navigation
-             };
+            };
 
 
             //MainPage = new MenuView();

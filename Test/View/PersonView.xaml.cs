@@ -5,13 +5,13 @@ using Xamarin.Forms;
 
 namespace Test.View
 {
-    public partial class MenuView : ContentPage
+    public partial class PersonView : ContentPage
     {
-        public MenuView()
+        public PersonView()
         {
             InitializeComponent();
 
-            BindingContext = new HomeViewModel();
+            BindingContext = new PersonViewModel();
         }
     }
 }

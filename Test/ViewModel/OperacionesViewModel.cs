@@ -7,7 +7,7 @@ namespace Test.ViewModel
 {
     public class OperacionesViewModel : INotifyPropertyChanged
     {
-
+        #region Properties
         public string MiNombre { get; set; }
         public string Valor1 { get; set; }
         public string Valor2 { get; set; }
@@ -28,6 +28,8 @@ namespace Test.ViewModel
         }
 
         public ICommand SumarCommand { get; set; }
+        #endregion
+
 
         public OperacionesViewModel()
         {
@@ -35,12 +37,9 @@ namespace Test.ViewModel
             SumarCommand = new Command(MetodoSumar);
         }
 
-        public void MetodoSumar() 
+        public void MetodoSumar()
         {
-
-            Resultado = (Int32.Parse(Valor1) +  Int32.Parse(Valor2)).ToString();
-
-
+            Resultado = (Int32.Parse(Valor1) + Int32.Parse(Valor2)).ToString();
         }
 
 

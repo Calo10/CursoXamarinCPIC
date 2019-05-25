@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Test.View.PersonView">
+    <StackLayout>
+        <!--Lista Personas-->
+        <StackLayout>
+            <ListView ItemsSource="{Binding lstPersons}"
+                      SeparatorVisibility="None"
+                      RowHeight="80"   
+                      
+                      HasUnevenRows="false">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--Estructura de la Celda-->
+                        <ViewCell>
+                            <StackLayout Margin="0,10">
+                                <Frame CornerRadius="15">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Name}"/>
+                                        <Label Text="{Binding LastName}" />
+                                        <Image Source="{Binding Photo}"/>
+                                        <Button Text="Ver"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
