@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Test.View.AgregarPersonView">
+    <StackLayout Padding="30,60">
+   
+            <!--Nombre-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Nombre:"/>
+                <Entry Text="{Binding CurrentPerson.Name}"
+                         WidthRequest="200"/>
+            </StackLayout>
+            <!--Apellido-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Apellido:"/>
+                <Entry Text="{Binding CurrentPerson.LastName}"
+                       WidthRequest="200"/>
+            </StackLayout>
+            <!--Edad-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Edad:"/>
+                <Entry Text="{Binding CurrentPerson.Age}"/>
+            </StackLayout>
+            <!--GUARDAR-->
+            <StackLayout Orientation="Horizontal">
+                <Button Text="GUARDAR PERSONA"
+                        Command="{Binding GuardarPersonaCommand}"/>
+          </StackLayout>
+        </StackLayout>
+</ContentPage>

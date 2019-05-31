@@ -19,11 +19,6 @@ namespace Test
                 Detail = navigation
             };
 
-
-            //MainPage = new MenuView();
-
-            //MainPage = new TabbedPage().Children.Add(new MenuView();
-
         }
 
         protected override void OnStart()

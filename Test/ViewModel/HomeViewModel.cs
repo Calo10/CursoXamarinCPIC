@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 using Test.Models;
+using Test.View;
+using Xamarin.Forms;
 
 namespace Test.ViewModel
 {
@@ -22,6 +25,8 @@ namespace Test.ViewModel
             }
         }
 
+        public ICommand EnterMenuCommand { get; set; }
+
         #endregion
 
         #region Methods
@@ -29,6 +34,26 @@ namespace Test.ViewModel
         public HomeViewModel()
         {
             lstMenu = MenuModel.GetAllMenu();
+
+            EnterMenuCommand = new Command<int>(EnterMenu);
+        }
+
+        private void EnterMenu(int opc)
+        {
+            switch (opc)
+            {
+                case 1:
+
+                    ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new OperacionesTabbedPageView());
+                    break;
+
+                case 2:
+
+                    break;
+                default:
+                    break;
+            }
+
         }
 
         #endregion

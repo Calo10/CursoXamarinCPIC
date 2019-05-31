@@ -16,9 +16,9 @@ namespace Test.Models
             ObservableCollection<PersonModel> lstPersons = new ObservableCollection<PersonModel>
             {
                 new PersonModel { Id = 1, Name = "Carlos", LastName = "Mendez", Age=31 },
-                new PersonModel { Id = 1, Name = "Daniel", LastName = "Mendez", Age=13 },
-                new PersonModel { Id = 1, Name = "Natasha", LastName = "Mendez", Age=7 },
-                new PersonModel { Id = 1, Name = "Sofia", LastName = "Mendez", Age=5 },
+                new PersonModel { Id = 2, Name = "Daniel", LastName = "Mendez", Age=13 },
+                new PersonModel { Id = 3, Name = "Natasha", LastName = "Mendez", Age=7 },
+                new PersonModel { Id = 4, Name = "Sofia", LastName = "Mendez", Age=5 },
             };
 
             return lstPersons;

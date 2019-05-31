@@ -5,6 +5,7 @@ namespace Test.Models
 {
     public class MenuModel
     {
+        public int Id { get; set; }
         public string Icon { get; set; }
         public string Title { get; set; }
         public string Detail { get; set; }
@@ -13,10 +14,9 @@ namespace Test.Models
         {
             ObservableCollection<MenuModel> lstMenu = new ObservableCollection<MenuModel>
             {
-                new MenuModel { Title = "Menu 1", Detail = "Detalle numero 1", Icon = "" },
-                new MenuModel { Title = "Menu 2", Detail = "Detalle numero 2", Icon = "" },
-                new MenuModel { Title = "Menu 3", Detail = "Detalle numero 3", Icon = "" },
-                new MenuModel { Title = "Menu 4", Detail = "Detalle numero 4", Icon = "" }
+                new MenuModel {Id=1, Title = "Operaciones", Detail = "Detalle numero 1", Icon = "" },
+                new MenuModel {Id=2, Title = "Mapa", Detail = "Detalle numero 2", Icon = "" },
+                new MenuModel {Id=3, Title = "Formulario Contacto", Detail = "Detalle numero 3", Icon = "" }
             };
 
             return lstMenu;

@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace Test.View
 {
-    public partial class PersonView : ContentPage
+    public partial class AgregarPersonView : ContentPage
     {
-        public PersonView()
+        public AgregarPersonView()
         {
             InitializeComponent();
 
