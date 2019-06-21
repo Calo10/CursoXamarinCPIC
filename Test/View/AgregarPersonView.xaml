@@ -21,6 +21,16 @@
                 <Label Text="Edad:"/>
                 <Entry Text="{Binding CurrentPerson.Age}"/>
             </StackLayout>
+            <!--Latitud-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Latitud:"/>
+                <Entry Text="{Binding CurrentPerson.Direction.Latitude}"/>
+            </StackLayout>
+            <!--Longitud-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Lontigud:"/>
+                <Entry Text="{Binding CurrentPerson.Direction.Longitude}"/>
+            </StackLayout>
             <!--GUARDAR-->
             <StackLayout Orientation="Horizontal">
                 <Button Text="GUARDAR PERSONA"

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+
 namespace Test.Models
 {
     public class LocationModel

@@ -91,7 +91,7 @@ namespace Test.ViewModel
 
         private void InitCommands()
         {
-            GuardarPersonaCommand = new Command(GuardarPersona);
+            GuardarPersonaCommand = new Command(GuardarPersonaAsync);
             EnterAgregarPersonaCommand = new Command(EnterAgregarPersona);
             EnterEditarPersonaCommand = new Command<int>(EnterEditarPersona);
         }
@@ -109,11 +109,15 @@ namespace Test.ViewModel
             ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new AgregarPersonView());
         }
 
-        public void GuardarPersona()
+        public async void GuardarPersonaAsync()
         {
-            lstPersons.Add(CurrentPerson);
+            //lstPersons.Add(CurrentPerson);
+
+            _ = PersonModel.AddPersons(CurrentPerson);
 
             CurrentPerson = null;
+
+            lstPersons = await PersonModel.GetAllPersons();
 
             ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PopAsync();
         }

@@ -55,21 +55,16 @@ namespace Test.ViewModel
 
         public void InitClass()
         {
-            LocationModel locationA = new LocationModel
-            {
-                Latitude = 9.9280884,
-                Longitude = -84.0667962,
-                Description = "Location A"
-            };
-            LocationModel locationB = new LocationModel
-            {
-                Latitude = 9.9380884,
-                Longitude = -84.0767962,
-                Description = "Location B"
-            };
 
-            lstLocations.Add(locationA);
-            lstLocations.Add(locationB);
+            foreach (var item in PersonViewModel.GetInstance().lstPersons)
+            {
+                lstLocations.Add(new LocationModel
+                {
+                    Latitude = item.Direction.Latitude,
+                    Longitude = item.Direction.Longitude,
+                    Description = item.Name
+                });
+            }
         }
 
         public void InitCommands()

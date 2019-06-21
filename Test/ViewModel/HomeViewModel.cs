@@ -48,7 +48,7 @@ namespace Test.ViewModel
                     break;
 
                 case 2:
-
+                    MapViewModel.DeleteInstance();
                     ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new MapView());
                     break;
                 default:
