@@ -76,9 +76,17 @@ namespace Test.ViewModel
         #endregion
 
         #region Methods
-        private void InitClass()
+        private async void InitClass()
         {
-            lstPersons = PersonModel.GetAllPersons();
+            try
+            {
+                lstPersons = await PersonModel.GetAllPersons();
+            }
+            catch
+            {
+
+            }
+
         }
 
         private void InitCommands()

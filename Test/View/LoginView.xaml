@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Test.View.LoginView">
+    <StackLayout>
+        <StackLayout Margin="0,500">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Usuario:"/>
+                <Entry Text="{Binding User}" 
+                       Placeholder="Digitar Usuario"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Contrasena:"/>
+                <Entry Text="{Binding Pass}" 
+                       Placeholder="Digitar Usuario"/>
+            </StackLayout>
+            <Button Text="LOGIN"
+                    Command="{Binding LoginCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

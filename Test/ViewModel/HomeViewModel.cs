@@ -49,6 +49,7 @@ namespace Test.ViewModel
 
                 case 2:
 
+                    ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new MapView());
                     break;
                 default:
                     break;
