@@ -57,9 +57,11 @@ namespace Test.Models
             {
                 var realm = Realm.GetInstance();
 
-                var lstPersons = realm.All<PersonModel>();
+                var lstPersons = realm.All<PersonModel>().ToList();
 
-                return null;
+                ObservableCollection<PersonModel> lst = new ObservableCollection<PersonModel>(lstPersons);
+
+                return lst;
 
             }
 

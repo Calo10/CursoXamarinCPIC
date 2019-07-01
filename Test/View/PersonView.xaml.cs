@@ -13,5 +13,6 @@ namespace Test.View
 
             BindingContext = PersonViewModel.GetInstance();
         }
+
     }
 }

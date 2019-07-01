@@ -8,9 +8,8 @@
         <StackLayout>
             <ListView ItemsSource="{Binding lstPersons}"
                       SeparatorVisibility="None"
-                      RowHeight="120"
                       VerticalOptions="FillAndExpand"
-                      HasUnevenRows="false">
+                      HasUnevenRows="true">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <!--Estructura de la Celda-->
@@ -37,6 +36,7 @@
             </ListView>
         </StackLayout>
         <Button Text="AGREGAR"
+                VerticalOptions="EndAndExpand"
                 Command="{Binding EnterAgregarPersonaCommand}"/>
     </StackLayout>
 </ContentPage>

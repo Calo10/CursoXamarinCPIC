@@ -113,7 +113,7 @@ namespace Test.ViewModel
         {
             //lstPersons.Add(CurrentPerson);
 
-            _ = PersonModel.AddPersons(CurrentPerson);
+            await PersonModel.AddPersons(CurrentPerson);
 
             CurrentPerson = null;
 

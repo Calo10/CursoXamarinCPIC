@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Test.View.LoginView">
     <StackLayout>
-        <StackLayout Margin="0,500">
+        <StackLayout Margin="0,100">
             <StackLayout Orientation="Horizontal">
                 <Label Text="Usuario:"/>
                 <Entry Text="{Binding User}" 
@@ -14,6 +14,14 @@
                 <Entry Text="{Binding Pass}" 
                        Placeholder="Digitar Usuario"/>
             </StackLayout>
+            <Image Source="fingerprint.png" 
+                   HeightRequest="60" 
+                   WidthRequest="60" 
+                   HorizontalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FingerAuthCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
             <Button Text="LOGIN"
                     Command="{Binding LoginCommand}"/>
         </StackLayout>

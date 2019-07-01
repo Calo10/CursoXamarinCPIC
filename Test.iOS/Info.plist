@@ -40,5 +40,15 @@
 	<string>using maps</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>using maps</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>Fotos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Fotos</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Video</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Foto</string>
 </dict>
 </plist>

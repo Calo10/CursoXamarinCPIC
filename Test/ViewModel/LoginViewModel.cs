@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
+using Plugin.Fingerprint;
 using Test.View;
 using Xamarin.Forms;
 
@@ -44,6 +45,7 @@ namespace Test.ViewModel
         }
 
         public ICommand LoginCommand { get; set; }
+        public ICommand FingerAuthCommand { get; set; }
 
         #endregion
 
@@ -75,21 +77,39 @@ namespace Test.ViewModel
         }
         #endregion
 
-        public void Login()
+        public async void Login()
         {
             if (User == "Carlos" && Pass == "123")
             {
-                NavigationPage navigation = new NavigationPage(new PersonView());
-
-                App.Current.MainPage = new MasterDetailPage
-                {
-                    Master = new MenuView(),
-                    Detail = navigation
-                };
+                CreateAppStructure();
             }
             else
             {
-                //Mensaje Error
+                await Application.Current.MainPage.DisplayAlert("Error", "Credenciales Invalidas", "Ok");
+            }
+        }
+
+        private void CreateAppStructure()
+        {
+            NavigationPage navigation = new NavigationPage(new PersonView());
+
+            App.Current.MainPage = new MasterDetailPage
+            {
+                Master = new MenuView(),
+                Detail = navigation
+            };
+        }
+
+        private async void FingerAuthAsync()
+        {
+            var result = await CrossFingerprint.Current.AuthenticateAsync("Prove you have fingers!");
+            if (result.Authenticated)
+            {
+                CreateAppStructure();
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Huella No valida", "Ok");
             }
         }
 
@@ -101,6 +121,7 @@ namespace Test.ViewModel
         private void InitCommands()
         {
             LoginCommand = new Command(Login);
+            FingerAuthCommand = new Command(FingerAuthAsync);
         }
 
         #region INotifyPropertyChanged Implementation

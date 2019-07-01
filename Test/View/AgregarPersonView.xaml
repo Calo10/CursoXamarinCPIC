@@ -31,6 +31,11 @@
                 <Label Text="Lontigud:"/>
                 <Entry Text="{Binding CurrentPerson.Direction.Longitude}"/>
             </StackLayout>
+            <StackLayout>
+                <Image x:Name="imgUserPhoto"/>
+                <Button Text="Tomar Foto" 
+                        Clicked="CameraButton_Clicked"/>
+            </StackLayout>
             <!--GUARDAR-->
             <StackLayout Orientation="Horizontal">
                 <Button Text="GUARDAR PERSONA"
